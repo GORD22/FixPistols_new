@@ -1,0 +1,124 @@
+.stock-section {
+    position: relative;
+    margin-top: 101px;
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -100px;
+        width: 0;
+        height: 0;
+        border-top: 101px solid #C50908;
+        border-right: 101px solid transparent;
+    }
+
+    &__top {
+        margin: 0;
+        background-color: #900A00;
+        padding: 22px 40px;
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 65px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
+
+    &__bottom {
+        padding: 0 40px;
+        background-color: #C50908;
+    }
+
+    &__slider {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+
+        padding-top: 95px;
+        padding-bottom: 95px;
+
+        & .btns-block {
+            position: absolute;
+            top: 5%;
+            z-index: 10;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        & .thumb-btn {
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
+            background-color: #fff;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease-in-out;
+
+            & svg {
+                width: 14px;
+                height: 26px;
+                fill: none;
+                stroke: #AB2222;
+                stroke-width: 4px;
+                stroke-linecap: round;
+                transition: color 0.3s ease-in-out;
+            }
+
+            @include hover {
+                background-color: #ff0000;
+
+                & svg {
+                    stroke: #fff;
+                }
+            }
+
+            &:active {
+                background-color: #ff0000;
+
+                & svg {
+                    stroke: #fff;
+                }
+            }
+        }
+
+        & .swiper-wrapper {
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
+    }
+}
+
+.stock-list {
+
+    &__item {
+        grid-column: span 4;
+        background-color: #900A00;
+        background-image: url(../../img/svg/stock.svg);
+        background-repeat: no-repeat;
+        background-position: right center;
+        min-height: 170px;
+        padding: 30px 0;
+        padding-right: 120px;
+        padding-left: 28px;
+    }
+    &__title {
+        margin: 0;
+        margin-bottom: 10px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 26px;
+        text-transform: uppercase;
+        color: #FDFDFD;
+    }
+
+    &__descr {
+        margin: 0;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 22px;
+        color: #EEEEEE;
+    }
+}

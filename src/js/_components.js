@@ -1,0 +1,7 @@
+import "./components/_category"
+import "./components/_hero"
+import "./components/_video"
+import "./components/_about-section"
+import "./components/_stock-section"
+import "./components/_hits-section"
+import "./components/_application-section"

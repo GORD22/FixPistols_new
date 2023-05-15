@@ -1,0 +1,131 @@
+.application-section {
+    position: relative;
+    background-color: #000;
+    padding-top: 44px;
+    padding-bottom: 22px;
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -100px;
+        width: 0;
+        height: 0;
+        border-top: 101px solid #000;
+        border-right: 101px solid transparent;
+    }
+
+    &__title {
+        margin: 0;
+        margin-bottom: 7px;
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 65px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
+
+    &__descr {
+        margin: 0;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 30px;
+        color: #FFFFFF;
+    }
+
+    &__slider {
+        position: relative;
+        overflow: hidden;
+        padding-top: 112px;
+
+        & .btns-block {
+            position: absolute;
+            width: 100%;
+            right: 0;
+            top: 2%;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+
+            & .thumb-btn {
+                width: 62px;
+                height: 62px;
+                border-radius: 50%;
+                background-color: #fff;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: background-color 0.3s ease-in-out;
+
+                & svg {
+                    width: 14px;
+                    height: 26px;
+                    fill: none;
+                    stroke: #000;
+                    stroke-width: 4px;
+                    stroke-linecap: round;
+                    transition: color 0.3s ease-in-out;
+                }
+
+                &:hover {
+
+                    background-color: #ff0000;
+
+                    & svg {
+                        stroke: #fff;
+                    }
+                }
+
+                &:active {
+                    background-color: #ff0000;
+
+                    & svg {
+                        stroke: #fff;
+                    }
+                }
+            }
+        }
+
+    }
+
+    & .swiper-wrapper {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+
+    & .swiper-slide {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+
+.applications-item {
+    max-width: 312px;
+    min-height: 412px;
+    margin-bottom: 62px;
+    & .video-block {
+        height: 297px;
+        &::before {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.31), rgba(0, 0, 0, 0.31))
+        }
+    }
+
+    &__title {
+        margin: 0;
+        margin-top: 9px;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 45px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
+    &__descr {
+        margin: 0;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 30px;
+
+        color: #CFCFCF;
+    }
+}

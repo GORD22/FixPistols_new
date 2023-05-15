@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+    <main class="main">
+      @include('partials/category.html')
+      @include('partials/hero.html')
+      @include('partials/about-section.html')
+      @include('partials/stock-section.html')
+      @include('partials/hits-section.html')
+      @include('partials/application-section.html')
+      <div class="lower-header">
+        @include('partials/header.html')
+      </div>
+    </main>
+    @include('partials/footer.html')
+  </div>
+  
+</body>
+
+</html>

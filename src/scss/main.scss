@@ -1,0 +1,21 @@
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+@import "../../node_modules/swiper/swiper-bundle";
+
+@import "./components/header";
+@import "./components/category";
+@import "./components/hero";
+@import "./components/about-section";
+@import "./components/stock-section";
+@import "./components/hits-section";
+@import "./components/application-section";
+.lower-header {
+    margin-top: 101px;
+}
+@import "./components/footer";
+
+
+
