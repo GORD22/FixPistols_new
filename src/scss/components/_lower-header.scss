@@ -1,0 +1,130 @@
+.lower-header {
+    margin-top: 63px;
+
+    & .header {
+        @include mobile {
+            padding-bottom: 130px;
+        }
+    }
+
+    & .language {
+        @include mobile {
+            order: 0;
+
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        &__title {
+            @include mobile {
+                line-height: 15px;
+            }
+        }
+
+        &__btn-choose-lang {
+            @include mobile {
+                padding-left: 0;
+            }
+        }
+    }
+
+    & .contacts {
+        @include mobile {
+            order: 2;
+        }
+    }
+
+    & .search {
+        @include mobile {
+            order: 3;
+        }
+    }
+
+    & .header-top__profile-btn {
+        @include mobile {
+            order: 1;
+            display: flex;
+            margin-bottom: 20px;
+            margin-left: 135px;
+            height: 27px;
+            padding-left: 10px;
+            padding-right: 9px;
+        }
+    }
+
+    & .header-bottom {
+        @include mobile {
+            position: relative;
+        }
+
+        & .btn-trapezium {
+            @include mobile {
+                display: block;
+                position: absolute;
+                bottom: -264px;
+                right: 22px;
+                height: 37px;
+
+                padding-left: 40px;
+                padding-right: 60px;
+            }
+        }
+    }
+
+
+    & .nav {
+        @include mobile {
+            display: block;
+            max-width: 380px;
+            margin-right: 0;
+            position: absolute;
+            bottom: -210px;
+            right: -45px;
+        }
+
+        &__list {
+            @include mobile {
+                justify-content: normal;
+                flex-wrap: wrap;
+            }
+        }
+
+        &__link {
+            @include mobile {
+                color: var(--dark-color);
+            }
+        }
+        &__item {
+            @include mobile {
+                width: 95px;
+            }
+        }
+    }
+
+    & .favorite-btn {
+        @include mobile {
+
+            display: flex;
+            align-items: center;
+            position: absolute;
+            bottom: -264px;
+            right: 110px;
+            height: 37px;
+            padding-left: 35px;
+            padding-right: 42px;
+        }
+
+        &__text {
+            @include mobile {
+                display: block;
+                font-size: 14px;
+                line-height: 26px;
+                color: #FFFFFF;
+                margin-right: 5px;
+            }
+        }
+    }
+
+
+}

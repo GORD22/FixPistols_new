@@ -1,7 +1,18 @@
 .about-section {
+    @include mobile {
+        margin-top: -1px;
+    }
+
     position: relative;
     background-color: #000;
+
     &::after {
+        @include mobile {
+            bottom: -63px;
+            border-top: 64px solid #000;
+            border-right: 64px solid transparent;
+        }
+
         content: "";
         position: absolute;
         left: 0;
@@ -13,50 +24,73 @@
     }
 
     &__slider {
+        @include mobile {
+            padding-top: 24px;
+            padding-bottom: 24px;
+        }
+
         position: relative;
         overflow: hidden;
         padding-top: 44px;
         padding-bottom: 85px;
 
         & .btns-block {
+            @include mobile {
+                top: 20%;
+                right: 40%;
+            }
+
             position: absolute;
-            right: 0;
             top: 7%;
+            right: 0;
             z-index: 10;
             display: flex;
 
             & .thumb-btn {
+                @include mobile {
+                    width: 39px;
+                    height: 39px;
+                }
+
                 margin: 0 15px;
                 width: 62px;
                 height: 62px;
                 border-radius: 50%;
-                background-color: #fff;
-    
+                background-color: #C50908;
+
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 transition: background-color 0.3s ease-in-out;
-    
+
                 & svg {
+                    @include mobile {
+                        width: 11px;
+                        height: 16px;
+                        stroke-width: 3px;
+                    }
+
                     width: 14px;
                     height: 26px;
                     fill: none;
-                    stroke: #AB2222;
+                    stroke: #000;
                     stroke-width: 4px;
                     stroke-linecap: round;
                     transition: color 0.3s ease-in-out;
                 }
+
                 &:hover {
-                    
+
                     background-color: #ff0000;
+
                     & svg {
                         stroke: #fff;
                     }
                 }
-    
+
                 &:active {
                     background-color: #ff0000;
-    
+
                     & svg {
                         stroke: #fff;
                     }
@@ -73,6 +107,15 @@
     & .slide {
 
         &__title {
+            @include mobile {
+                margin: 0 auto;
+                margin-bottom: 51px;
+                max-width: 318px;
+                font-size: 25px;
+                line-height: 38px;
+                text-align: center;
+            }
+
             margin: 0;
             font-weight: 600;
             font-size: 36px;
@@ -83,16 +126,65 @@
         }
 
         &__content {
+            @include mobile {
+                flex-flow: wrap;
+            }
+
             display: flex;
             justify-content: space-between;
+        }
+
+        &__btn-details {
+            @include mobile {
+                display: block;
+                margin-top: 18px;
+                width: 100%;
+
+            }
+
+            display: none;
+            height: 43px;
+            background: #C50908;
+            border: 1px solid #C50908;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 26px;
+
+            text-align: center;
+            text-transform: uppercase;
+
+            color: #FFFFFF;
+            transition: bacground-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+            @include hover {
+                background-color: #c9772a;
+                color: #242424;
+            }
+    
+            &:active {
+                background-color: #c9772a;
+                color: #242424;
+            }
         }
     }
 
     & .info {
+        @include mobile {
+            order: 0;
+
+            max-width: 257px;
+            margin: 0 auto;
+        }
+
         max-width: 430px;
         margin-left: 30px;
 
         &__title {
+            @include mobile {
+                text-align: center;
+                font-size: 18px;
+            }
+
             margin: 0;
             font-weight: 600;
             font-size: 20px;
@@ -102,6 +194,10 @@
         }
 
         &__descr {
+            @include mobile {
+                display: none;
+            }
+
             margin: 0;
             font-weight: 400;
             font-size: 18px;
@@ -111,6 +207,10 @@
     }
 
     & .video-block {
+        @include mobile {
+            order: 1;
+        }
+
         &::before {
             background: linear-gradient(262.21deg, rgba(215, 19, 19, 0.2) 12.92%, rgba(215, 19, 19, 0) 87.15%),
                 linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), ;
@@ -150,6 +250,7 @@
 }
 
 .btn-play {
+
     position: absolute;
     top: 50%;
     left: 50%;
@@ -158,6 +259,11 @@
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 
     & svg {
+        @include mobile {
+            width: 20px;
+            height: 26px;
+        }
+
         fill: #fff;
         width: 39px;
         height: 49px;

@@ -1,3 +1,19 @@
-import { swiperCreater } from "../_functions"
+import Swiper, {Navigation} from 'swiper';
 
-const swiperHits = swiperCreater(".hits-section__slider", ".hits-section__slider")
+const swiperHits = new Swiper(".hits-section__slider", {
+    modules: [Navigation],
+    loop: true,
+    
+    slidesPerView: 1,
+
+    breakpoints: {
+        577: {
+            slidesPerView: 4
+        }
+    },
+
+    navigation: {
+        nextEl: '.btn-next',
+        prevEl: '.btn-prev',
+    }
+});

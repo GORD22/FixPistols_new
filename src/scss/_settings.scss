@@ -24,6 +24,10 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
+  @include mobile {
+    background: url(../img/main-bcg-mobile.jpg) no-repeat center center fixed;
+  }
 }
 
 img {
@@ -41,6 +45,11 @@ a {
   width: 1170px;
   margin: 0 auto;
   padding-top: 54px;
+
+  @include mobile {
+    width: 360px;
+    padding-top: 24px;
+  }
 }
 
 .btn-reset {
@@ -75,6 +84,11 @@ a {
   margin: 0 auto;
   padding: 0 var(--container-offset);
   max-width: var(--container-width);
+
+  @include mobile {
+    padding: 0 var(--container-offset-mobile);
+    max-width: var(--container-width-mobile);
+  }
 }
 
 .grid {

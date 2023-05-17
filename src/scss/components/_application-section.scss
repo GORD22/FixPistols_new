@@ -1,9 +1,20 @@
 .application-section {
+    @include mobile {
+        padding-top: 9px;
+    }
+
     position: relative;
     background-color: #000;
     padding-top: 44px;
     padding-bottom: 22px;
+
     &::after {
+        @include mobile {
+            bottom: -63px;
+            border-top: 64px solid #000;
+            border-right: 64px solid transparent;
+        }
+
         content: "";
         position: absolute;
         left: 0;
@@ -15,6 +26,13 @@
     }
 
     &__title {
+
+        @include mobile {
+            text-align: center;
+            font-size: 25px;
+            margin: 0;
+        }
+
         margin: 0;
         margin-bottom: 7px;
         font-weight: 500;
@@ -25,6 +43,13 @@
     }
 
     &__descr {
+        @include mobile {
+            margin: 0 auto;
+            text-align: center;
+            font-size: 18px;
+            max-width: 257px;
+        }
+
         margin: 0;
         font-weight: 600;
         font-size: 20px;
@@ -38,6 +63,10 @@
         padding-top: 112px;
 
         & .btns-block {
+            @include mobile {
+                top: 5%;
+            }
+
             position: absolute;
             width: 100%;
             right: 0;
@@ -47,6 +76,11 @@
             justify-content: space-between;
 
             & .thumb-btn {
+                @include mobile {
+                    width: 44px;
+                    height: 44px;
+                }
+
                 width: 62px;
                 height: 62px;
                 border-radius: 50%;
@@ -58,6 +92,11 @@
                 transition: background-color 0.3s ease-in-out;
 
                 & svg {
+                    @include mobile {
+                        width: 11px;
+                        height: 16px;
+                    }
+
                     width: 14px;
                     height: 26px;
                     fill: none;
@@ -94,6 +133,8 @@
     }
 
     & .swiper-slide {
+        padding-left: 20px;
+        padding-right: 20px;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
@@ -101,26 +142,45 @@
 }
 
 .applications-item {
-    max-width: 312px;
+    @include mobile {
+        margin-bottom: 0;
+    }
+
+    max-width: 297px;
     min-height: 412px;
     margin-bottom: 62px;
+
     & .video-block {
         height: 297px;
+
         &::before {
             background: linear-gradient(0deg, rgba(0, 0, 0, 0.31), rgba(0, 0, 0, 0.31))
         }
     }
 
     &__title {
+        @include mobile {
+            text-align: center;
+            line-height: 56px;
+        }
+
         margin: 0;
-        margin-top: 9px;
+        margin-top: 3px;
         font-weight: 500;
         font-size: 22px;
         line-height: 45px;
         text-transform: uppercase;
         color: #FFFFFF;
     }
+
     &__descr {
+        @include mobile {
+            margin: 0 auto;
+            max-width: 288px;
+            text-align: center;
+            font-size: 16px;
+        }
+
         margin: 0;
         font-weight: 400;
         font-size: 18px;

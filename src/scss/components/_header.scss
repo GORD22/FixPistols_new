@@ -1,4 +1,11 @@
 .header {
+    @include mobile {
+        display: flex;
+        flex-flow: wrap;
+        padding-top: 24px;
+        padding-bottom: 0;
+    }
+
     position: relative;
     z-index: 1000;
     width: 100%;
@@ -9,9 +16,17 @@
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
 
     .btn-trapezium {
-        transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+
+        transition: color 0.3s ease-in-out,
+            background-color 0.3s ease-in-out;
 
         &_size {
+            @include mobile {
+                padding-left: 21px;
+                padding-right: 12px;
+            }
+
             padding-left: 21px;
             padding-right: 43px;
         }
@@ -28,6 +43,15 @@
 
         &__content {
             & svg {
+                @include mobile {
+                    width: 14px;
+                    height: 14px;
+                    fill: none;
+                    stroke: #fff;
+                    stroke-width: 1px;
+                    transition: stroke 0.3s ease-in-out;
+                }
+
                 width: 18px;
                 height: 18px;
                 fill: none;
@@ -37,6 +61,16 @@
             }
 
             & span {
+                @include mobile {
+                    & span {
+                        margin-left: 8px;
+                        font-weight: 500;
+                        font-size: 15px;
+                        line-height: 30px;
+                        text-transform: uppercase;
+                    }
+                }
+
                 margin-left: 8px;
                 font-weight: 500;
                 font-size: 14px;
@@ -75,9 +109,22 @@
 }
 
 .header-top {
+    @include mobile {
+        order: 1;
+
+        padding-top: 12px;
+        padding-bottom: 9px;
+    }
+
     padding-bottom: 17px;
 
     &__container {
+        @include mobile {
+            display: flex;
+            flex-flow: wrap;
+            padding: 0 24px;
+        }
+
         padding: 0 15px;
         display: grid;
         grid-template-columns: repeat(9, 1fr);
@@ -93,6 +140,10 @@
         padding-right: 21px;
         color: #797979;
         transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+        @include mobile {
+            display: none;
+        }
 
         & svg {
             width: 18px;
@@ -126,11 +177,15 @@
                 fill: #D0D0D0;
             }
         }
-
     }
+
 }
 
-.location {
+.language {
+    @include mobile {
+        display: none;
+    }
+
     &__title {
         font-weight: 400;
         font-size: 12px;
@@ -138,10 +193,10 @@
         color: #888888;
     }
 
-    &__btn-choose-city {
-        background-image: url(../../img/svg/location.svg);
+    &__btn-choose-lang {
+        background-image: url(../../img/svg/language.svg);
         background-repeat: no-repeat;
-        background-position: top 2px left 0;
+        background-position: left 0 center;
         padding-left: 19px;
         font-weight: 500;
         font-size: 14px;
@@ -152,18 +207,37 @@
 }
 
 .search {
+    @include mobile {
+        order: 1;
+
+        margin: 0;
+        height: 36px;
+    }
+
     margin-left: 38px;
     display: flex;
     grid-column: 2 / span 4;
     height: 41px;
 
     &__input {
+        @include mobile {
+            width: 210px;
+
+            padding-left: 14px;
+            padding-right: 39px;
+        }
+
         width: 288px;
         border: 1px solid #D0D0D0;
         padding-left: 18px;
         padding-right: 39px;
 
         &::placeholder {
+
+            @include mobile {
+                font-size: 15px;
+            }
+
             font-family: var(--font-family);
             font-style: normal;
             font-weight: 400;
@@ -173,13 +247,14 @@
             color: #888888;
         }
 
+
     }
 }
 
 .btn-trapezium {
     position: relative;
     z-index: 1;
-    height: 41px;
+    height: inherit;
 
     &::before {
         content: "";
@@ -188,7 +263,7 @@
         top: 0;
         left: -16%;
         z-index: -1;
-        height: 41px;
+        height: inherit;
         width: 50%;
         transform: skew(-45deg);
     }
@@ -200,12 +275,29 @@
 }
 
 .contacts {
+    @include mobile {
+        order: 0;
+
+        width: 100%;
+        align-items: start;
+        justify-content: space-between;
+        margin: 0;
+    }
+
     margin-left: -29px;
     grid-column: 6 / 3 span;
     display: flex;
     align-items: center;
 
     &__mail {
+        @include mobile {
+            font-size: 14px;
+            line-height: 15px;
+
+            background-position: center left 0;
+            padding-left: 25px;
+        }
+
         padding-left: 28px;
         background-image: url(../../img/svg/mail.svg);
         background-repeat: no-repeat;
@@ -217,12 +309,23 @@
     }
 
     &__phone {
+        @include mobile {
+            margin: 0;
+        }
+
         margin-right: 44px;
         margin-left: 44px;
         text-align: right;
     }
 
     &__number {
+        @include mobile {
+            font-size: 14px;
+            line-height: 15px;
+
+            background-position: center left 0;
+        }
+
         display: block;
         padding-left: 19px;
         background-image: url(../../img/svg/phone.svg);
@@ -237,6 +340,11 @@
     }
 
     &__call {
+        @include mobile {
+            font-size: 10px;
+            line-height: 26px;
+        }
+
         cursor: pointer;
         display: block;
         font-weight: 400;
@@ -248,6 +356,15 @@
 }
 
 .header-bottom {
+    @include mobile {
+        order: 0;
+
+        padding-left: 329px;
+        padding-right: 12px;
+        height: 24px;
+        background-size: cover;
+    }
+
     background-image: url(../../img/logo.png);
     background-repeat: no-repeat;
     padding-left: 362px;
@@ -255,14 +372,56 @@
     display: flex;
     align-items: center;
 
+    & .burger {
+        @include mobile {
+            position: relative;
+            display: block;
+            width: 19px;
+            height: 0;
+            border-bottom: 4px solid #FFFFFF;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 0;
+
+                border-bottom: 4px solid #FFFFFF;
+            }
+
+            &::before {
+                top: -7px;
+            }
+
+            &::after {
+                top: 7px;
+            }
+        }
+
+        display: none;
+    }
+
     .btn-trapezium {
+        @include mobile {
+            display: none;
+        }
+
         &_size {
-            padding-left: 15px;
-            padding-right: 27px;
+            padding-left: 34px;
+            padding-right: 35px;
         }
     }
 
     & .favorite-btn {
+        @include mobile {
+            display: none;
+        }
+        &__text {
+            display: none;
+        }
+
         margin-right: 70px;
         padding: 12px 14px;
         height: inherit;
@@ -293,6 +452,10 @@
 }
 
 .nav {
+    @include mobile {
+        display: none;
+    }
+
     margin-right: 50px;
 
     &__list {
@@ -322,7 +485,6 @@
 }
 
 .favorite-btn {
-    
     transition: background-color 0.3s ease-in-out;
 
     & svg {
@@ -330,7 +492,4 @@
         height: 17px;
         transition: fill 0.3s ease-in-out;
     }
-
-   
-
 }

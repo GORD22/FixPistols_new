@@ -1,3 +1,12 @@
-import { swiperCreater } from "../_functions"
+import Swiper, {Navigation} from 'swiper';
 
-const swiperHero = swiperCreater(".hero__slider", ".hero__slider")
+const swiperHero = new Swiper(".hero__slider", {
+    modules: [Navigation],
+    loop: true,
+    
+    navigation: {
+        nextEl: '.btn-next',
+        prevEl: '.btn-prev',
+    },
+    
+});
