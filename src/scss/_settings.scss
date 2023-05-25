@@ -27,6 +27,7 @@ html {
 
   @include mobile {
     background: url(../img/main-bcg-mobile.jpg) no-repeat center center fixed;
+    background-size: cover;
   }
 }
 

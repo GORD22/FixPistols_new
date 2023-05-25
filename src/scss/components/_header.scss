@@ -13,7 +13,7 @@
     padding-bottom: 40px;
 
     background-color: #fff;
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 8px 8px 14px rgba(0, 0, 0, 0.5);
 
     .btn-trapezium {
 
@@ -80,28 +80,18 @@
         }
 
         @include hover {
-            background-color: #c9772a;
-            color: #242424;
-
-            & svg {
-                stroke: #242424;
-            }
+            background-color: #900A00;
 
             &::before {
-                background-color: #c9772a;
+                background-color: #900A00;
             }
         }
 
         &:active {
-            background-color: #c9772a;
-            color: #242424;
-
-            & svg {
-                stroke: #242424;
-            }
+            background-color: #900A00;
 
             &::before {
-                background-color: #c9772a;
+                background-color: #900A00;
             }
         }
 
@@ -203,6 +193,18 @@
         line-height: 26px;
         text-decoration-line: underline;
         color: #323232;
+
+        & svg {
+            position: relative;
+            top: -7px;
+            right: -3px;
+            width: 8px;
+            height: 4px;
+            fill: none;
+            stroke: #000;
+            stroke-width: 1px;
+            stroke-linecap: round;
+        }
     }
 }
 
@@ -313,8 +315,7 @@
             margin: 0;
         }
 
-        margin-right: 44px;
-        margin-left: 44px;
+        margin-left: 18px;
         text-align: right;
     }
 
@@ -358,19 +359,33 @@
 .header-bottom {
     @include mobile {
         order: 0;
-
-        padding-left: 329px;
+        width: 100%;
         padding-right: 12px;
         height: 24px;
         background-size: cover;
+        justify-content: space-between;
     }
 
-    background-image: url(../../img/logo.png);
-    background-repeat: no-repeat;
-    padding-left: 362px;
+    background-color: #000;
+
     height: 41px;
     display: flex;
     align-items: center;
+
+    & .logo {
+        @include mobile {
+            display: none;
+        }
+        background-color: #fff;
+        height: inherit;
+
+        &_mob {
+            @include mobile {
+                display: block;
+            }
+            display: none;
+        }
+    }
 
     & .burger {
         @include mobile {
@@ -457,6 +472,7 @@
     }
 
     margin-right: 50px;
+    margin-left: 18px;
 
     &__list {
         max-width: 515px;

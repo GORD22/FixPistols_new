@@ -64,7 +64,9 @@
         & .btns-block {
             @include mobile {
                 top: 7%;
+                padding: 0 15px;
             }
+            padding: 0 40px;
             position: absolute;
             top: 5%;
             z-index: 10;

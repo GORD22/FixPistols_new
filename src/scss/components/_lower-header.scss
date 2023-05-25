@@ -1,5 +1,8 @@
 .lower-header {
-    margin-top: 63px;
+    @include mobile {
+        margin-top: 63px;
+    }
+    margin-top: 101px;
 
     & .header {
         @include mobile {
@@ -24,7 +27,7 @@
 
         &__btn-choose-lang {
             @include mobile {
-                padding-left: 0;
+                padding-left: 10px;
             }
         }
     }
@@ -46,7 +49,7 @@
             order: 1;
             display: flex;
             margin-bottom: 20px;
-            margin-left: 135px;
+            margin-left: 125px;
             height: 27px;
             padding-left: 10px;
             padding-right: 9px;

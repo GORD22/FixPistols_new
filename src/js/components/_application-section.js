@@ -1,7 +1,7 @@
-import Swiper, { Navigation } from 'swiper';
+import Swiper, { Grid, Navigation } from 'swiper';
 
 const swiperApplication = new Swiper(".application-section__slider", {
-    modules: [Navigation],
+    modules: [Navigation, Grid],
     loop: true,
     slidesPerView: 'auto',
 
@@ -9,6 +9,11 @@ const swiperApplication = new Swiper(".application-section__slider", {
         577: {
             loop: false,
             slidesPerView: 3,
+            spaceBetween: 99,
+            grid: {
+                rows: 3,
+                fill: 'row'
+            },
         }
     },
 

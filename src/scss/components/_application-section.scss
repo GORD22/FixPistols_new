@@ -1,12 +1,17 @@
 .application-section {
     @include mobile {
-        padding-top: 9px;
+        padding-top: 126px;
+        padding-bottom: 24px;
+
+        & .container {
+            padding: 0 30px;
+        }
     }
 
     position: relative;
     background-color: #000;
-    padding-top: 44px;
-    padding-bottom: 22px;
+    padding-top: 144px;
+    padding-bottom: 82px;
 
     &::after {
         @include mobile {
@@ -25,38 +30,6 @@
         border-right: 101px solid transparent;
     }
 
-    &__title {
-
-        @include mobile {
-            text-align: center;
-            font-size: 25px;
-            margin: 0;
-        }
-
-        margin: 0;
-        margin-bottom: 7px;
-        font-weight: 500;
-        font-size: 36px;
-        line-height: 65px;
-        text-transform: uppercase;
-        color: #FFFFFF;
-    }
-
-    &__descr {
-        @include mobile {
-            margin: 0 auto;
-            text-align: center;
-            font-size: 18px;
-            max-width: 257px;
-        }
-
-        margin: 0;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 30px;
-        color: #FFFFFF;
-    }
-
     &__slider {
         position: relative;
         overflow: hidden;
@@ -65,8 +38,10 @@
         & .btns-block {
             @include mobile {
                 top: 5%;
+                padding: 0 1px;
             }
 
+            padding: 0 40px;
             position: absolute;
             width: 100%;
             right: 0;
@@ -133,11 +108,10 @@
     }
 
     & .swiper-slide {
-        padding-left: 20px;
-        padding-right: 20px;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        @include mobile {
+            margin-right: 30px;
+        }
+        max-width: 297px;
     }
 }
 
@@ -148,10 +122,13 @@
 
     max-width: 297px;
     min-height: 412px;
-    margin-bottom: 62px;
 
     & .video-block {
         height: 297px;
+
+        &__video {
+            object-fit: contain;
+        }
 
         &::before {
             background: linear-gradient(0deg, rgba(0, 0, 0, 0.31), rgba(0, 0, 0, 0.31))
